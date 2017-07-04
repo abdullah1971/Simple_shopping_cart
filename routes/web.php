@@ -1,5 +1,8 @@
 <?php
 
+use App\User;
+use App\UserRole;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +15,17 @@
 */
 
 Route::get('/', function () {
+
+	// $roles = App\UserRole::find(1)->userType;
+
+	// if(App\UserRole::find(1)->userType()->where('role','modifier')){
+
+	// 	return $roles;
+	// }
+	// return $roles;
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
